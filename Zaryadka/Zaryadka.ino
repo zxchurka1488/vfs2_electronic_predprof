@@ -10,7 +10,7 @@ const uint16_t triangleWave100[numSamples] = {23, 52, 80, 108, 137, 137, 108, 80
 // Прерывание Timer2: обновляет скважность PWM
 ISR(TIMER2_OVF_vect) {
   if (signalMode == 0 || signalMode == 3) {
-    OCR1A = ICR1 / 2;  // Синус (50% duty cycle)
+    OCR1A = ICR1 / 2;  
   } else {
     waveformIndex = (waveformIndex + 1) % numSamples;
     if (signalMode == 1) {
